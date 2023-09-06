@@ -27,12 +27,13 @@ export default function Home() {
       setIsError(true)
       setLoading(false)
     }
+  }
 
-    //get this when page loads
-    useEffect(() => {
-      getPokemon()
-    }, []) 
-  } 
+  //get this when page loads
+  useEffect(() => {
+    getPokemon()
+  }, []) 
+   
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">

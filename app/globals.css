@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.card__img--incorrect {
+  filter: brightness(0);
+  scale: 1.5;
+ }
+ .card__img--correct {
+  scale: 1.5;
+ }

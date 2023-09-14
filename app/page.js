@@ -21,7 +21,7 @@ export default function Home() {
     try {
       const data = await axios.get('./api/pokemon')
       console.log(data)
-      setPokemon(data)
+      setPokemon(data.data)
       setLoading(false)
     } catch(error) {
       console.log(error);

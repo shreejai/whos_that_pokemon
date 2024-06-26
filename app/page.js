@@ -74,9 +74,10 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-
-      <h1 className='text-4xl font-bold'>Who's that Pokémon?</h1>
-      <h2 className='text-3xl font-bold'>Score: {score}</h2>
+      <div className='text-center'>
+        <h1 className='text-4xl font-bold mb-3'>Who's that Pokémon?</h1>
+        <h2 className='text-3xl font-bold'>Score: {score}</h2>
+      </div>
       <PokemonCard pokemon={currentPokemon} isCorrect={isCorrect}/>
 
       
@@ -88,7 +89,7 @@ export default function Home() {
       >
         <div className="flex items-center border-b border-teal-500 py-2">
           <input
-            className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+            className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none caret-white text-white"
             type="text"
             placeholder="Which Pokemon is this?"
             aria-label="Full name"

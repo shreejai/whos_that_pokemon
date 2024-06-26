@@ -63,7 +63,7 @@ export default function Home() {
   }, [pokemon]);
 
   if (loading) {
-    const statusMessage = loading ? "Loading..." : "Error!";
+    const statusMessage = loading ? (<img src="/pokeball_black.png" className=" opacity-[50%] animate-spin max-w-[40px] max-h-[40px]"/>) : "Error!";
     return (
       <main className="flex flex-col items-center justify-center py-2 h-screen">
         <h1 className="text-4xl font-bold">{statusMessage}</h1>
@@ -75,8 +75,10 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className='text-center'>
-        <h1 className='text-4xl font-bold mb-3'>Who's that Pokémon?</h1>
-        <h2 className='text-3xl font-bold'>Score: {score}</h2>
+        <h1 className='text-4xl font-bold mb-3 text-slate-400'>Who's that Pokémon?</h1>
+        <h2 className='text-3xl font-bold'>Score: 
+          <span className='text-slate-400'> {score}</span>
+        </h2>
       </div>
       <PokemonCard pokemon={currentPokemon} isCorrect={isCorrect}/>
 

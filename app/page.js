@@ -89,15 +89,18 @@ export default function Home() {
         onSubmit={handleSubmit}
         style={{ marginTop: "2rem" }}
       >
-        <div className="flex items-center border-b border-teal-500 py-2">
-          <input
-            className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none caret-white text-white"
-            type="text"
-            placeholder="Which Pokemon is this?"
-            aria-label="Full name"
-            onChange={(e) => setGuess(e.target.value)}
-            value={guess}
-          />
+        <div className="flex flex-col sm:flex-row justify-between items-center py-2">
+          <div className='border-b border-teal-500 py-2 mb-4'>
+            <input
+              className="appearance-none bg-transparent border-none w-full mr-3 py-1 px-2 leading-tight focus:outline-none caret-white text-white text-[12px] sm:text-[14px]"
+              type="text"
+              placeholder="Which Pokemon is this?"
+              aria-label="Full name"
+              onChange={(e) => setGuess(e.target.value)}
+              value={guess}
+            />
+          </div>
+          <div>
           <button
             className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
             type="submit"
@@ -114,6 +117,7 @@ export default function Home() {
           >
             Skip
           </button>
+          </div>
         </div>
       </form>
     </main>

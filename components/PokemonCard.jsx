@@ -32,7 +32,7 @@ export default function PokemonCard ({ pokemon, isCorrect }) {
         <img src="/pokeball_black.png" className=" opacity-[50%] animate-spin max-w-[40px] max-h-[40px]"/>
       ) :
       (<img
-        src={data?.sprites?.front_default}
+        src={data?.sprites?.other?.showdown?.front_default}
         alt={"guess who?"}
         className={isCorrect ? "card__img--correct" : "card__img--incorrect"}
         style={{

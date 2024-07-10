@@ -1,16 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import AudioPlayer from "./AudioPlayer";
 
 export default function PokemonCard ({ pokemon, isCorrect }) {
 
   const [data, setData] = useState({});
-  const [loading, setLoading] = useState(true);
-  const audioRef = useRef(null); 
-
-  
+  const [loading, setLoading] = useState(true);  
 
 // use useEffect when pokemon value changes from the props
   useEffect(() => {

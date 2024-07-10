@@ -11,8 +11,6 @@ const AudioPlayer = ({ url }) => {
   return (
     <div>
       <audio ref={audioRef} autoPlay onEnded={() => audioRef.current.pause()}/>
-        {/* Your browser does not support the audio element.
-      </audio> */}
     </div>
   )
 }

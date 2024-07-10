@@ -10,22 +10,7 @@ export default function PokemonCard ({ pokemon, isCorrect }) {
   const [loading, setLoading] = useState(true);
   const audioRef = useRef(null); 
 
-  // useEffect(()=>{
-  //   const fetchAudio = async () => {
-  //     try {
-  //       const response = await fetch();
-  //       const blob = await response.blob();
-  //       const url = URL.createObjectURL(blob);
-  //       if(audioRef.current) {
-  //         audioRef.current.src = url;
-  //       }
-  //     } catch (error) {
-  //       console.log('Failed to fetch audio:', error);
-  //     }
-  //   };
-
-  //   fetchAudio();
-  // },[])
+  
 
 // use useEffect when pokemon value changes from the props
   useEffect(() => {
@@ -50,16 +35,28 @@ export default function PokemonCard ({ pokemon, isCorrect }) {
       {loading ? (
         <img src="/pokeball_black.png" className=" opacity-[50%] animate-spin max-w-[40px] max-h-[40px]"/>
       ) :
-      (<><img
-        src={data?.sprites?.other?.showdown?.front_default}
-        alt={"guess who?"}
-        className={isCorrect ? "card__img--correct" : "card__img--incorrect"}
-        style={{
-          marginTop: "50px"
-        }}
-      />
-        <p className="mt-5">Ability: {data?.abilities[0]?.ability?.name}</p>
+      (<>
+        {!isCorrect ? (<img
+          src={data?.sprites?.other?.showdown?.front_default}
+          alt={"guess who?"}
+          className={"card__img--incorrect"}
+          style={{
+            marginTop: "50px"
+          }}
+        />) : (
+          <>
+          <img
+          src={data?.sprites?.other?.showdown?.front_default}
+          alt={"guess who?"}
+          className={"card__img--correct"}
+          style={{
+            marginTop: "50px"
+          }}
+        />
         <AudioPlayer url={data?.cries?.latest}/>
+        </>
+        )}
+        {/* <p className="mt-5">Ability: {data?.abilities[0]?.ability?.name}</p> */}
       </>)}
     </div>
   );
